@@ -7,6 +7,10 @@ module.exports = function(color_string) {
     this.ok = false;
     this.alpha = 1.0;
 
+    if (typeof color_string !== 'string') {
+        return '#000';
+    }
+
     // strip any leading #
     if (color_string.charAt(0) == '#') { // remove # if any
         color_string = color_string.substr(1,6);
